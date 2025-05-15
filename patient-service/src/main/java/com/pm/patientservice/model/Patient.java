@@ -3,6 +3,7 @@ package com.pm.patientservice.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -29,7 +30,7 @@ public class Patient {
     private LocalDate dateOfBirth;
 
     @NotNull
-    private LocalTime registeredDate;
+    private LocalDate registeredDate;
 
     public UUID getId() {
         return id;
@@ -71,11 +72,11 @@ public class Patient {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public @NotNull LocalTime getRegisteredDate() {
+    public @NotNull LocalDate getRegisteredDate() {
         return registeredDate;
     }
 
-    public void setRegisteredDate(@NotNull LocalTime registeredDate) {
+    public void setRegisteredDate(@NotNull LocalDate registeredDate) {
         this.registeredDate = registeredDate;
     }
 }
